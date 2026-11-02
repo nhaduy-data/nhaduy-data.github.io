@@ -43,6 +43,7 @@ figure.shot img { background: #fff; }
 .segs .seg[aria-selected="true"] { background: #fff; color: var(--bs-primary); box-shadow: 0 .125rem .4rem rgba(0,0,0,.08); }
 .segs .seg:focus-visible { outline: 3px solid var(--bs-primary); outline-offset: 2px; }
 .round-pane[hidden] { display: none !important; }
+.group-head { border-left: 4px solid var(--bs-primary); padding-left: 1rem; }
 @media (max-width: 575.98px) {
   .segs { display: grid; grid-template-columns: 1.4fr 1fr 1fr; width: 100%; border-radius: 1rem; }
   .segs .seg { padding: .5rem .4rem; line-height: 1.25; font-size: .85rem; border-radius: .8rem; }
