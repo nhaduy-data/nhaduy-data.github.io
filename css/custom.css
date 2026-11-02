@@ -66,3 +66,6 @@ figure.shot img { background: #fff; }
   .card-body.p-5 { padding: 1.5rem !important; }
   .profile .profile-img { width: 100%; height: auto; }
 }
+
+/* Bootstrap gx-5 gutters are wider than the container padding on phones: stop the sideways scroll */
+@media (max-width: 576px) { .row.gx-5 { --bs-gutter-x: 1.5rem; } }
