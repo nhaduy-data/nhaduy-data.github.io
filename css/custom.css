@@ -69,3 +69,12 @@ figure.shot img { background: #fff; }
 
 /* Bootstrap gx-5 gutters are wider than the container padding on phones: stop the sideways scroll */
 @media (max-width: 576px) { .row.gx-5 { --bs-gutter-x: 1.5rem; } }
+
+/* Several screenshots per project: two per row on wider screens, one per row on phones */
+.shots { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 1.5rem 0 1.25rem; }
+.shots figure { margin: 0; }
+.shots img { background: #fff; width: 100%; height: auto; }
+@media (min-width: 768px) {
+  .shots { grid-template-columns: 1fr 1fr; }
+  .shots figure.wide { grid-column: 1 / -1; }
+}
