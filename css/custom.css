@@ -29,6 +29,14 @@ figure.shot img { background: #fff; }
 .contact-item:hover { border-color: var(--bs-primary); }
 .min-w-0 { min-width: 0; }
 
+.about-text p { color: #495057; }
+.hl { border: 1px solid #e9ecef; }
+.rounds-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; counter-reset: r; }
+.rounds-line li { position: relative; padding-top: 1rem; border-top: 3px solid #dee2e6; }
+.rounds-line li.win { border-top-color: var(--bs-secondary); }
+.rounds-line .outcome { color: var(--bs-primary); }
+.rounds-line li.win .outcome { color: var(--bs-secondary); }
+@media (max-width: 767.98px) { .rounds-line { grid-template-columns: 1fr; } }
 .win-gallery { display: flex; flex-wrap: wrap; gap: 1rem; }
 .win-gallery figure { --r: 1; flex: var(--r) 1 0; aspect-ratio: var(--r); min-width: 0; margin: 0; overflow: hidden; border-radius: 1rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.08); }
 .win-gallery .g-stage { --r: 1.442; }
