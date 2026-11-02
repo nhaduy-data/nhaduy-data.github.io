@@ -21,3 +21,27 @@
     set(saved);
     btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
 })();
+
+// Round tabs on the home page
+(function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.segs [role="tab"]'));
+    if (!tabs.length) return;
+    function show(tab, focus) {
+        tabs.forEach(function (x) {
+            var on = x === tab;
+            x.setAttribute('aria-selected', on ? 'true' : 'false');
+            x.tabIndex = on ? 0 : -1;
+            document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+        });
+        if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { show(tab); });
+        tab.addEventListener('keydown', function (e) {
+            var j = null;
+            if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
+            if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+            if (j !== null) { e.preventDefault(); show(tabs[j], true); }
+        });
+    });
+})();
