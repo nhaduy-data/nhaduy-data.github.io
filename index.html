@@ -1,344 +1,252 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nguyen Hoang Anh Duy – Data Analyst</title>
-<meta name="description" content="Portfolio of Nguyen Hoang Anh Duy, Data Science student at HCMUS looking for a Data Analyst internship in Ho Chi Minh City.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap&subset=vietnamese" rel="stylesheet">
-<style>
-:root{
-  --bg:#F1F4F3; --surface:#FFFFFF; --ink:#1C2B30; --muted:#55666B; --line:#D5DDDB;
-  --accent:#1F6F6A; --accent-soft:#DCEBE8; --flat:#B8892A; --flat-soft:#F3E8CF;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#11191B; --surface:#182326; --ink:#E4ECEA; --muted:#9AACA9; --line:#2A3A3D;
-    --accent:#5FB9B0; --accent-soft:#1E3A38; --flat:#D9B055; --flat-soft:#3A3220;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#11191B; --surface:#182326; --ink:#E4ECEA; --muted:#9AACA9; --line:#2A3A3D;
-  --accent:#5FB9B0; --accent-soft:#1E3A38; --flat:#D9B055; --flat-soft:#3A3220;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px;line-height:1.6}
-html[data-lang="en"] [lang="vi"], html[data-lang="vi"] [lang="en"]{display:none !important}
-a{color:var(--accent);text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.15;margin:0;font-weight:700;letter-spacing:-0.01em}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.text{max-width:680px}
-
-/* top bar */
-.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-.name{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:17px}
-.langs{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.langs button{font:inherit;font-size:15px;background:transparent;color:var(--muted);border:0;padding:4px 14px;cursor:pointer}
-.langs button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;padding:48px 0 72px}
-.hero h1{font-size:clamp(38px,5.6vw,64px)}
-.hero p{color:var(--muted);font-size:19px;margin:24px 0 0}
-.hero p strong{color:var(--ink);font-weight:600}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;background:var(--surface)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-:root[data-theme="dark"] .btn.primary{color:#0E1617}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0E1617}}
-
-.split{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
-.split h2{font-size:17px;font-weight:500;color:var(--muted);margin-bottom:6px}
-.pair{margin:0 0 26px}
-.pair:last-of-type{margin-bottom:12px}
-.row{display:grid;grid-template-columns:72px 1fr 64px;align-items:center;gap:10px;margin:8px 0;font-size:15px}
-.row .when{color:var(--muted)}
-.row .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
-.bar{height:14px;border-radius:3px;background:var(--accent);transform-origin:left;}
-.flat .bar{background:var(--flat)}
-.split figcaption{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
-@media (prefers-reduced-motion:no-preference){
-  .bar{animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both}
-  .row:nth-child(3) .bar{animation-delay:.25s}
-  .flat .bar{animation-delay:.6s}
-  .flat .row:nth-child(3) .bar{animation-delay:.85s}
-  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-}
-
-/* sections */
-section{padding:56px 0;border-top:1px solid var(--line)}
-section > .wrap > h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:12px}
-.lede{color:var(--muted);margin:0 0 8px}
-
-/* competition timeline */
-.rounds{margin-top:40px;display:grid;gap:56px}
-.round{display:grid;grid-template-columns:150px 1fr;gap:32px}
-.stage{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;color:var(--muted);font-size:16px;padding-top:4px;border-top:3px solid var(--line)}
-.stage b{display:block;color:var(--ink);font-size:20px;font-weight:700;margin-top:6px}
-.round.final .stage{border-top-color:var(--accent)}
-.round.final .stage b{color:var(--accent)}
-.round h3{font-size:24px;margin-bottom:6px}
-.q{color:var(--muted);margin:0 0 14px}
-ul.find{margin:0;padding-left:20px}
-ul.find li{margin:6px 0}
-.mine{margin:16px 0 0;font-size:16px;color:var(--muted);border-left:3px solid var(--accent-soft);padding-left:12px}
-.mine strong{color:var(--ink)}
-figure.shot{margin:22px 0 0}
-figure.shot img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#fff}
-figure.shot figcaption{font-size:14px;color:var(--muted);margin-top:8px}
-.links{margin-top:14px;font-size:16px;display:flex;gap:18px;flex-wrap:wrap}
-
-/* olist */
-.project{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px;align-items:start}
-.project figure.shot{margin:0}
-
-/* skills + contact */
-.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px;margin-top:20px}
-.skills h3{font-size:18px;margin-bottom:4px}
-.skills p{margin:0;color:var(--muted)}
-footer{padding:56px 0 72px;border-top:1px solid var(--line)}
-footer h2{font-size:clamp(26px,3vw,34px);margin-bottom:10px}
-footer p{color:var(--muted);margin:0}
-
-@media (max-width:860px){
-  .hero{grid-template-columns:1fr;gap:36px;padding-top:24px}
-  .round{grid-template-columns:1fr;gap:14px}
-  .project{grid-template-columns:1fr}
-  .skills{grid-template-columns:1fr}
-}
-@media (max-width:480px){
-  body{font-size:17px}
-  .wrap{padding:0 16px}
-  .split{padding:20px}
-  .row{grid-template-columns:62px 1fr 58px}
-}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <header class="top">
-    <span class="name">Nguyen Hoang Anh Duy</span>
-    <div class="langs" role="group" aria-label="Language">
-      <button type="button" data-set="en" aria-pressed="true">EN</button>
-      <button type="button" data-set="vi" aria-pressed="false">VI</button>
-    </div>
-  </header>
-
-  <div class="hero">
-    <div>
-      <h1 lang="en">Applications grew 36 times. Each shop barely moved.</h1>
-      <h1 lang="vi">Số hồ sơ tăng 36 lần. Từng shop gần như đứng yên.</h1>
-      <p lang="en">That gap, between what the total says and what is happening underneath, is what I like to find. I'm <strong>Duy</strong>, a final-year Data Science student at HCMUS, looking for a full-time Data Analyst internship in Ho Chi Minh City.</p>
-      <p lang="vi">Khoảng cách giữa điều con số tổng nói và điều đang diễn ra bên dưới là thứ mình thích tìm. Mình là <strong>Duy</strong>, sinh viên năm cuối ngành Khoa học Dữ liệu tại ĐH Khoa học Tự nhiên TP.HCM, đang tìm vị trí thực tập Data Analyst toàn thời gian tại TP.HCM.</p>
-      <div class="actions">
-        <a class="btn primary" href="NguyenHoangAnhDuy_CV.pdf" download><span lang="en">Download CV</span><span lang="vi">Tải CV</span></a>
-        <a class="btn" href="mailto:nguyenhoanganhduy2005@gmail.com">Email</a>
-        <a class="btn" href="https://linkedin.com/in/anhduy-nguyenhoang">LinkedIn</a>
-        <a class="btn" href="https://github.com/nhaduy-data">GitHub</a>
-      </div>
-    </div>
-
-    <figure class="split" aria-label="Network applications versus applications per shop">
-      <div class="pair">
-        <h2 lang="en">Applications per month, whole network</h2>
-        <h2 lang="vi">Số hồ sơ mỗi tháng, toàn mạng lưới</h2>
-        <div class="row"><span class="when"><span lang="en">Jan 2025</span><span lang="vi">T1/2025</span></span><div><div class="bar" style="width:2.7%"></div></div><span class="v"><span lang="en">1,526</span><span lang="vi">1.526</span></span></div>
-        <div class="row"><span class="when"><span lang="en">Sep 2026</span><span lang="vi">T9/2026</span></span><div><div class="bar" style="width:100%"></div></div><span class="v"><span lang="en">55,743</span><span lang="vi">55.743</span></span></div>
-      </div>
-      <div class="pair flat">
-        <h2 lang="en">Applications per shop per month</h2>
-        <h2 lang="vi">Số hồ sơ mỗi shop mỗi tháng</h2>
-        <div class="row"><span class="when"><span lang="en">Jan 2025</span><span lang="vi">T1/2025</span></span><div><div class="bar" style="width:95.3%"></div></div><span class="v"><span lang="en">8.1</span><span lang="vi">8,1</span></span></div>
-        <div class="row"><span class="when"><span lang="en">Sep 2026</span><span lang="vi">T9/2026</span></span><div><div class="bar" style="width:100%"></div></div><span class="v"><span lang="en">8.5</span><span lang="vi">8,5</span></span></div>
-      </div>
-      <figcaption lang="en">Home Credit Vietnam case, 11,752 partner shops. Growth came from opening shops, not from shops selling more.</figcaption>
-      <figcaption lang="vi">Case Home Credit Vietnam, 11.752 shop đối tác. Tăng trưởng đến từ mở thêm shop, không phải từ việc mỗi shop bán nhiều hơn.</figcaption>
-    </figure>
-  </div>
-</div>
-
-<section id="bi10">
-  <div class="wrap">
-    <h2 lang="en">Business Intelligence Season 10, Champion</h2>
-    <h2 lang="vi">Business Intelligence Season 10, Quán quân</h2>
-    <div class="text">
-      <p class="lede" lang="en">A business case competition run by ITB Club at the University of Economics and Law, Sep–Oct 2026. I led a team of five through three rounds. After Round 2 the judges said our work was too academic for managers, so for the final we explained every method in business terms, gave every recommendation a rule and a test, and won.</p>
-      <p class="lede" lang="vi">Cuộc thi giải case kinh doanh do ITB Club, ĐH Kinh tế – Luật tổ chức, tháng 9–10/2026. Mình làm trưởng nhóm 5 người qua 3 vòng. Sau vòng 2, giám khảo nhận xét bài quá học thuật với người quản lý, nên ở chung kết nhóm giải thích mọi phương pháp bằng ngôn ngữ kinh doanh, mỗi đề xuất đều có quy tắc và cách kiểm chứng, và nhóm vô địch.</p>
-    </div>
-
-    <div class="rounds">
-      <!-- Final round -->
-      <article class="round final">
-        <div class="stage"><span lang="en">Round 3</span><span lang="vi">Vòng 3</span><b lang="en">Final</b><b lang="vi">Chung kết</b></div>
-        <div>
-          <h3 lang="en">How much can each shop still grow?</h3>
-          <h3 lang="vi">Mỗi shop còn tăng được bao nhiêu?</h3>
-          <p class="q" lang="en">Home Credit Vietnam sells consumer loans through 11,752 partner shops. Sales managers wanted to know where to put their people and budget first.</p>
-          <p class="q" lang="vi">Home Credit Vietnam cho vay tiêu dùng qua 11.752 shop đối tác. Ban quản lý bán hàng muốn biết nên dồn nhân sự và ngân sách vào đâu trước.</p>
-          <ul class="find" lang="en">
-            <li>Growth came from opening shops. Each shop stayed at about 8 applications a month, and a third of active shops signed no contract in Q3 2026.</li>
-            <li>If every shop matched the top 25% of similar shops, the network would sign about <strong>16,300 more contracts a month</strong> (+41.6% on the forecast). Three quarters of that comes from the number of sales agents and how many applications each one handles; reject and cancel rates add little.</li>
-            <li>Plan: coach agents in 2,688 shops now, and test hiring with a 96-shop randomised pilot before scaling. Closing half the gap in priority shops is worth about 6,175 contracts and 85.5 billion VND in loans a month.</li>
-          </ul>
-          <ul class="find" lang="vi">
-            <li>Tăng trưởng đến từ mở thêm shop. Mỗi shop vẫn chỉ khoảng 8 hồ sơ mỗi tháng, và một phần ba shop đang hoạt động không ký được hợp đồng nào trong quý 3/2026.</li>
-            <li>Nếu mỗi shop làm tốt bằng 1/4 shop tốt nhất trong nhóm shop giống nó, mạng lưới ký thêm khoảng <strong>16.300 hợp đồng mỗi tháng</strong> (cao hơn dự báo 41,6%). Ba phần tư đến từ số nhân viên bán hàng và số hồ sơ mỗi người làm; tỷ lệ từ chối và hủy đóng góp rất ít.</li>
-            <li>Kế hoạch: kèm cặp nhân viên ở 2.688 shop ngay, và thử tuyển thêm bằng pilot 96 shop chọn ngẫu nhiên trước khi mở rộng. Thu hẹp một nửa phần chênh ở các shop ưu tiên tương đương khoảng 6.175 hợp đồng và 85,5 tỷ đồng tiền cho vay mỗi tháng.</li>
-          </ul>
-          <p class="mine" lang="en"><strong>My part:</strong> data exploration and the team's shared cleaning pipeline (Python and DuckDB SQL over 2 GB of files), the business overview, the breakdown of each shop's current sales, and the peer benchmark. We presented to a panel that included Home Credit Vietnam's Head of Sales Planning &amp; Analysis.</p>
-          <p class="mine" lang="vi"><strong>Phần của mình:</strong> khám phá dữ liệu và pipeline làm sạch dùng chung cho cả nhóm (Python và DuckDB SQL trên 2 GB dữ liệu), bức tranh tổng quan kinh doanh, phần tách doanh số hiện tại của từng shop, và phần so sánh với shop cùng loại. Nhóm thuyết trình trước ban giám khảo có Trưởng bộ phận Sales Planning &amp; Analysis của Home Credit Vietnam.</p>
-          <figure class="shot">
-            <a href="assets/final_actions.jpg" class="zoom"><img src="assets/final_actions.jpg" width="1400" height="787" loading="lazy" alt="Slide ranking actions by impact and cost: coach agents is the biggest and cheapest lever; adding agents needs a pilot first."></a>
-            <figcaption lang="en">From the final deck: actions ranked by impact and cost.</figcaption>
-            <figcaption lang="vi">Trích slide chung kết: các hành động xếp theo tác động và chi phí.</figcaption>
-          </figure>
-          <div class="links">
-            <a href="https://github.com/nhaduy-data/bi10-shop-growth-potential"><span lang="en">Code and notebooks</span><span lang="vi">Code và notebook</span></a>
-            <a href="https://github.com/nhaduy-data/bi10-shop-growth-potential/blob/main/slides/BI10_Final_Round_Slides.pdf"><span lang="en">Final slides (PDF)</span><span lang="vi">Slide chung kết (PDF)</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Round 2 -->
-      <article class="round">
-        <div class="stage"><span lang="en">Round 2</span><span lang="vi">Vòng 2</span><b>Synthesize</b></div>
-        <div>
-          <h3 lang="en">Which customers are really engaged, and does it matter?</h3>
-          <h3 lang="vi">Khách nào thật sự gắn kết, và điều đó có quan trọng không?</h3>
-          <p class="q" lang="en">A consumer-finance company with 1 million customers had loans, leads, scoring events and sales calls, but no single measure of engagement.</p>
-          <p class="q" lang="vi">Một công ty tài chính tiêu dùng có 1 triệu khách, có dữ liệu hợp đồng, lead, chấm điểm và cuộc gọi, nhưng chưa có thước đo chung về mức độ gắn kết.</p>
-          <ul class="find" lang="en">
-            <li>I built a 0–100 Engagement Score from five behaviour signals, each worth up to 20 points, so any score can be traced point by point.</li>
-            <li>Tested on the following month without using any future data: the top group was 12.1% of customers but brought <strong>30.1% of new contract value</strong>. Signing rates rose from 1.43% in the lowest group to 6.63% in the highest.</li>
-            <li>Keeping calls made separate from calls answered showed 76,451 customers who were called often but rarely responded: a contact problem, not a customer problem.</li>
-          </ul>
-          <ul class="find" lang="vi">
-            <li>Mình xây Engagement Score 0–100 từ 5 tín hiệu hành vi, mỗi tín hiệu tối đa 20 điểm, nên lần được điểm của từng khách.</li>
-            <li>Kiểm tra trên tháng sau mà không dùng dữ liệu tương lai: nhóm cao nhất chiếm 12,1% khách nhưng mang về <strong>30,1% giá trị hợp đồng mới</strong>. Tỷ lệ ký tăng từ 1,43% ở nhóm thấp nhất lên 6,63% ở nhóm cao nhất.</li>
-            <li>Tách việc được gọi với việc có phản hồi cho thấy 76.451 khách bị gọi nhiều nhưng ít phản hồi: vấn đề nằm ở cách liên hệ, không phải ở khách.</li>
-          </ul>
-          <p class="mine" lang="en"><strong>My part:</strong> data exploration, cleaning, and the Engagement Score.</p>
-          <p class="mine" lang="vi"><strong>Phần của mình:</strong> khám phá dữ liệu, làm sạch, và Engagement Score.</p>
-          <figure class="shot">
-            <a href="assets/r2_validation.jpg" class="zoom"><img src="assets/r2_validation.jpg" width="1400" height="787" loading="lazy" alt="Slide showing signing rates rising across engagement groups and the high group's share of new contract value."></a>
-            <figcaption lang="en">From the Round 2 deck: checking the score against the next month's contracts.</figcaption>
-            <figcaption lang="vi">Trích slide vòng 2: kiểm tra điểm với hợp đồng của tháng sau.</figcaption>
-          </figure>
-          <div class="links">
-            <a href="https://github.com/nhaduy-data/bi10-customer-health-engagement"><span lang="en">Code and notebooks</span><span lang="vi">Code và notebook</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Round 1 -->
-      <article class="round">
-        <div class="stage"><span lang="en">Round 1</span><span lang="vi">Vòng 1</span><b>Decode</b></div>
-        <div>
-          <h3 lang="en">What sits behind a bad financial month?</h3>
-          <h3 lang="vi">Điều gì nằm sau một tháng tài chính tệ?</h3>
-          <p class="q" lang="en">999 customers, 1.85 million transactions, and a monthly financial health score that must never be used to deny credit.</p>
-          <p class="q" lang="vi">999 khách, 1,85 triệu giao dịch, và một điểm sức khỏe tài chính theo tháng không bao giờ được dùng để từ chối cho vay.</p>
-          <ul class="find" lang="en">
-            <li>Stress was rare and short: under 1% of customer-months, and 95.7% recovered the next month.</li>
-            <li><strong>73.4% of stressed months</strong> contained one purchase worth at least 20% of monthly income, against 0.9% of months scoring 60–80.</li>
-            <li>So the answer was support around big purchases, not restrictions: six tools, led by spend alerts, reaching 89.4% of customers.</li>
-          </ul>
-          <ul class="find" lang="vi">
-            <li>Căng thẳng tài chính hiếm và ngắn: dưới 1% số tháng, và 95,7% hồi phục ngay tháng sau.</li>
-            <li><strong>73,4% tháng căng thẳng</strong> có một khoản mua từ 20% thu nhập tháng trở lên, so với 0,9% ở các tháng có điểm 60–80.</li>
-            <li>Vì vậy giải pháp là hỗ trợ quanh các khoản mua lớn, không phải hạn chế: 6 công cụ, dẫn đầu là cảnh báo chi tiêu, chạm tới 89,4% khách.</li>
-          </ul>
-          <p class="mine" lang="en"><strong>My part:</strong> the financial health analysis and the recommendations.</p>
-          <p class="mine" lang="vi"><strong>Phần của mình:</strong> phân tích sức khỏe tài chính và phần đề xuất.</p>
-          <figure class="shot">
-            <a href="assets/r1_stressed_months.jpg" class="zoom"><img src="assets/r1_stressed_months.jpg" width="1400" height="497" loading="lazy" alt="Chart comparing what customers buy in stressed months versus other months."></a>
-            <figcaption lang="en">What customers buy in stressed months compared with other months.</figcaption>
-            <figcaption lang="vi">Khách mua gì trong tháng căng thẳng so với các tháng khác.</figcaption>
-          </figure>
-          <div class="links">
-            <a href="https://github.com/nhaduy-data/bi10-consumer-financial-health"><span lang="en">Code and notebooks</span><span lang="vi">Code và notebook</span></a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="olist">
-  <div class="wrap">
-    <h2 lang="en">Why do 97.8% of customers never come back?</h2>
-    <h2 lang="vi">Vì sao 97,8% khách không bao giờ quay lại?</h2>
-    <p class="lede text" lang="en">Personal project on the Olist e-commerce dataset (96,477 orders), Jun–Sep 2026. PostgreSQL star schema, Python, and a 5-page Power BI dashboard.</p>
-    <p class="lede text" lang="vi">Dự án cá nhân trên bộ dữ liệu thương mại điện tử Olist (96.477 đơn hàng), tháng 6–9/2026. Star schema trên PostgreSQL, Python, và dashboard Power BI 5 trang.</p>
-    <div class="project">
-      <div>
-        <ul class="find" lang="en">
-          <li>Before any analysis I caught two data errors: a join that <strong>doubled revenue</strong> on multi-item orders, and split orders that pushed the repeat rate from a real 2.16% to 3.0%.</li>
-          <li>Survival analysis set churn at 175 and 288 days. The common 90-day rule would have written off 45% of customers who later came back.</li>
-          <li>Late delivery hurts ratings (2.3 vs 4.3 stars) far more than repeat buying (2.2% vs 1.6%), so it is a logistics quality problem, not a retention lever.</li>
-        </ul>
-        <ul class="find" lang="vi">
-          <li>Trước khi phân tích, mình bắt được hai lỗi dữ liệu: một phép join làm <strong>doanh thu bị nhân đôi</strong> ở đơn nhiều sản phẩm, và các đơn bị tách làm tỷ lệ mua lại tăng từ 2,16% (thật) lên 3,0%.</li>
-          <li>Survival analysis đặt ngưỡng rời bỏ ở 175 và 288 ngày. Quy ước 90 ngày phổ biến sẽ coi nhầm 45% khách sau đó quay lại là đã mất.</li>
-          <li>Giao trễ làm điểm đánh giá giảm mạnh (2,3 so với 4,3 sao) nhưng ít ảnh hưởng tới việc mua lại (2,2% so với 1,6%), nên đây là vấn đề chất lượng giao vận, không phải đòn bẩy giữ chân khách.</li>
-        </ul>
-        <div class="links">
-          <a href="https://github.com/nhaduy-data/customer-lifecycle-analytics"><span lang="en">Code, SQL and dashboard</span><span lang="vi">Code, SQL và dashboard</span></a>
-        </div>
-      </div>
-      <figure class="shot">
-        <a href="assets/olist_dashboard.jpg" class="zoom"><img src="assets/olist_dashboard.jpg" width="1295" height="726" loading="lazy" alt="Executive overview page of the Olist Power BI dashboard."></a>
-        <figcaption lang="en">Power BI dashboard, executive overview page.</figcaption>
-        <figcaption lang="vi">Dashboard Power BI, trang tổng quan.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <h2 lang="en">What I work with</h2>
-    <h2 lang="vi">Công cụ và phương pháp</h2>
-    <div class="skills">
-      <div><h3>SQL</h3><p>PostgreSQL, DuckDB</p></div>
-      <div><h3>Python</h3><p>pandas, NumPy, scikit-learn</p></div>
-      <div><h3>Power BI</h3><p lang="en">DAX, Power Query, data modeling; Excel and Git day to day</p><p lang="vi">DAX, Power Query, data modeling; dùng Excel và Git hằng ngày</p></div>
-      <div><h3 lang="en">Methods</h3><h3 lang="vi">Phương pháp</h3><p lang="en">Star schema and ELT design, cohort analysis, RFM and K-Means, survival analysis</p><p lang="vi">Thiết kế star schema và ELT, cohort analysis, RFM và K-Means, survival analysis</p></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <h2 lang="en">Looking for a Data Analyst intern?</h2>
-    <h2 lang="vi">Bạn đang tìm thực tập sinh Data Analyst?</h2>
-    <p lang="en">I can start full-time in Ho Chi Minh City. The quickest way to reach me is <a href="mailto:nguyenhoanganhduy2005@gmail.com">nguyenhoanganhduy2005@gmail.com</a>.</p>
-    <p lang="vi">Mình có thể làm toàn thời gian tại TP.HCM. Cách liên hệ nhanh nhất là <a href="mailto:nguyenhoanganhduy2005@gmail.com">nguyenhoanganhduy2005@gmail.com</a>.</p>
-    <div class="actions">
-      <a class="btn primary" href="NguyenHoangAnhDuy_CV.pdf" download><span lang="en">Download CV</span><span lang="vi">Tải CV</span></a>
-      <a class="btn" href="https://linkedin.com/in/anhduy-nguyenhoang">LinkedIn</a>
-      <a class="btn" href="https://github.com/nhaduy-data">GitHub</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var root=document.documentElement, btns=document.querySelectorAll('.langs button');
-  function set(l){
-    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
-    btns.forEach(function(b){b.setAttribute('aria-pressed', b.dataset.set===l ? 'true':'false');});
-    try{localStorage.setItem('lang',l);}catch(e){}
-  }
-  var saved=null; try{saved=localStorage.getItem('lang');}catch(e){}
-  if(!saved){ saved=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'; }
-  set(saved==='vi'?'vi':'en');
-  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set);});});
-})();
-</script>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Portfolio of Nguyen Hoang Anh Duy, Data Science student at HCMUS looking for a Data Analyst internship in Ho Chi Minh City." />
+        <meta name="author" content="Nguyen Hoang Anh Duy" />
+        <title>Nguyen Hoang Anh Duy – Data Analyst Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/custom.css" rel="stylesheet" />
+        <script>try{var l=localStorage.getItem('lang');if(l==='vi'||l==='en')document.documentElement.setAttribute('data-lang',l);}catch(e){}</script>
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Nguyen Hoang Anh Duy</span></a>
+                    <div class="d-flex align-items-center order-lg-last ms-auto ms-lg-3">
+                        <div class="langs" role="group" aria-label="Language">
+                            <button type="button" data-set="en" aria-pressed="true">EN</button>
+                            <button type="button" data-set="vi" aria-pressed="false">VI</button>
+                        </div>
+                        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><span lang="en">Home</span><span lang="vi">Trang chủ</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html"><span lang="en">Resume</span><span lang="vi">Hồ sơ</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html"><span lang="en">Projects</span><span lang="vi">Dự án</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-5">
+                            <div class="text-center text-xxl-start">
+                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase"><span lang="en">Determined &middot; Curious &middot; Studious</span><span lang="vi">Quyết tâm &middot; Tò mò &middot; Ham học</span></div></div>
+                                <div class="fs-3 fw-light text-muted"><span lang="en">Hi, I'm</span><span lang="vi">Xin chào, mình là</span></div>
+                                <h1 class="display-3 fw-bolder mb-4"><span class="text-gradient d-inline">Nguyễn Hoàng Anh Duy</span></h1>
+                                <p class="fs-5 fw-light text-muted mb-5"><span lang="en">Final-year Data Science student at HCMUS, looking for a full-time Data Analyst internship in Ho Chi Minh City.</span><span lang="vi">Sinh viên năm cuối ngành Khoa học Dữ liệu, ĐH Khoa học Tự nhiên TP.HCM, đang tìm vị trí thực tập Data Analyst toàn thời gian tại TP.HCM.</span></p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html"><span lang="en">Resume</span><span lang="vi">Hồ sơ</span></a>
+                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html"><span lang="en">Projects</span><span lang="vi">Dự án</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-7">
+                            <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+                                <div class="profile bg-gradient-primary-to-secondary">
+                                    <img class="profile-img" src="assets/profile.webp" width="400" height="400" alt="Nguyen Hoang Anh Duy" />
+                                    <div class="dots-1">
+                                        <!-- SVG Dots-->
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
+                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
+                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
+                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
+                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
+                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
+                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
+                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
+                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
+                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
+                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
+                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
+                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
+                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
+                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
+                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
+                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
+                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
+                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
+                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
+                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
+                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
+                                            </g>
+                                        </svg>
+                                        <!-- END of SVG dots-->
+                                    </div>
+                                    <div class="dots-2">
+                                        <!-- SVG Dots-->
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
+                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
+                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
+                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
+                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
+                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
+                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
+                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
+                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
+                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
+                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
+                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
+                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
+                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
+                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
+                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
+                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
+                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
+                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
+                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
+                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
+                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
+                                            </g>
+                                        </svg>
+                                        <!-- END of SVG dots-->
+                                    </div>
+                                    <div class="dots-3">
+                                        <!-- SVG Dots-->
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
+                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
+                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
+                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
+                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
+                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
+                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
+                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
+                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
+                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
+                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
+                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
+                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
+                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
+                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
+                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
+                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
+                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
+                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
+                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
+                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
+                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
+                                            </g>
+                                        </svg>
+                                        <!-- END of SVG dots-->
+                                    </div>
+                                    <div class="dots-4">
+                                        <!-- SVG Dots-->
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
+                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
+                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
+                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
+                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
+                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
+                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
+                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
+                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
+                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
+                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
+                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
+                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
+                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
+                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
+                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
+                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
+                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
+                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
+                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
+                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
+                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
+                                            </g>
+                                        </svg>
+                                        <!-- END of SVG dots-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About Section-->
+            <section class="bg-light py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xxl-8">
+                            <div class="text-center my-5">
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline"><span lang="en">About Me</span><span lang="vi">Về mình</span></span></h2>
+                                <p class="lead fw-light mb-4" lang="en">I like digging past the totals to find what a dataset is really saying.</p>
+                                <p class="lead fw-light mb-4" lang="vi">Mình thích đào sâu bên dưới các con số tổng để tìm ra điều dữ liệu thật sự đang nói.</p>
+                                <p class="text-muted" lang="en">I led a five-person team to win <strong>Business Intelligence Season 10</strong>, a case competition whose final round was set by Home Credit Vietnam. Next, I want to learn how analysts at a real company turn data into decisions and explain them to people without a data background.</p>
+                                <p class="text-muted" lang="vi">Mình làm trưởng nhóm 5 người và vô địch <strong>Business Intelligence Season 10</strong>, cuộc thi giải case có vòng chung kết do Home Credit Vietnam ra đề. Điều mình muốn học tiếp là cách người làm phân tích ở doanh nghiệp biến dữ liệu thành quyết định và giải thích cho người không có nền tảng dữ liệu.</p>
+                                <div class="d-flex justify-content-center fs-2 gap-4">
+                                    <a class="text-gradient" href="mailto:nguyenhoanganhduy2005@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                    <a class="text-gradient" href="https://www.linkedin.com/in/anhduy-nguyenhoang" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                    <a class="text-gradient" href="https://github.com/nhaduy-data" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Featured finding-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <div class="card shadow border-0 rounded-4">
+                                <div class="card-body p-5">
+                                    <div class="row gx-5 align-items-center">
+                                        <div class="col-lg-6 mb-4 mb-lg-0">
+                                            <div class="text-primary fw-bolder mb-2"><span lang="en">Business Intelligence Season 10 &middot; Champion</span><span lang="vi">Business Intelligence Season 10 &middot; Quán quân</span></div>
+                                            <h2 class="fw-bolder mb-3" lang="en">Applications grew 36 times. Each shop barely moved.</h2>
+                                            <h2 class="fw-bolder mb-3" lang="vi">Số hồ sơ tăng 36 lần. Từng shop gần như đứng yên.</h2>
+                                            <p class="text-muted mb-4" lang="en">Home Credit Vietnam's 11,752 partner shops grew because new shops opened, not because each shop sold more. Our final-round answer showed where each shop could still grow and what to do first.</p>
+                                            <p class="text-muted mb-4" lang="vi">11.752 shop đối tác của Home Credit Vietnam tăng trưởng nhờ mở thêm shop, không phải vì mỗi shop bán nhiều hơn. Bài chung kết của nhóm chỉ ra mỗi shop còn tăng được ở đâu và nên làm gì trước.</p>
+                                            <a class="btn btn-outline-dark px-4 py-2 fw-bolder" href="projects.html#final"><span lang="en">Read the project</span><span lang="vi">Xem dự án</span></a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <figure class="split m-0" aria-label="Network applications versus applications per shop">
+                                                <div class="small fw-bolder text-muted mb-1"><span lang="en">Applications per month, whole network</span><span lang="vi">Số hồ sơ mỗi tháng, toàn mạng lưới</span></div>
+                                                <div class="srow"><span><span lang="en">Jan 2025</span><span lang="vi">T1/2025</span></span><div><div class="bar bar-a" style="width:2.7%"></div></div><b><span lang="en">1,526</span><span lang="vi">1.526</span></b></div>
+                                                <div class="srow mb-4"><span><span lang="en">Sep 2026</span><span lang="vi">T9/2026</span></span><div><div class="bar bar-a" style="width:100%"></div></div><b><span lang="en">55,743</span><span lang="vi">55.743</span></b></div>
+                                                <div class="small fw-bolder text-muted mb-1"><span lang="en">Applications per shop per month</span><span lang="vi">Số hồ sơ mỗi shop mỗi tháng</span></div>
+                                                <div class="srow"><span><span lang="en">Jan 2025</span><span lang="vi">T1/2025</span></span><div><div class="bar bar-b" style="width:95.3%"></div></div><b><span lang="en">8.1</span><span lang="vi">8,1</span></b></div>
+                                                <div class="srow"><span><span lang="en">Sep 2026</span><span lang="vi">T9/2026</span></span><div><div class="bar bar-b" style="width:100%"></div></div><b><span lang="en">8.5</span><span lang="vi">8,5</span></b></div>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; Nguyen Hoang Anh Duy 2026</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="mailto:nguyenhoanganhduy2005@gmail.com">Email</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="https://www.linkedin.com/in/anhduy-nguyenhoang">LinkedIn</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="https://github.com/nhaduy-data">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
